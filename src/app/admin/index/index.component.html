@@ -1,4 +1,16 @@
-<p>
+<!--<p>
   좌측 메뉴
-</p>
-<router-outlet></router-outlet>
+</p>-->
+
+<div class="row">
+  <div class="col-sm-3">
+    <ul class="list-group">
+      <li class="list-group-item" routerLink="/admin/register" routerLinkActive="active">hero 등록</li>
+      <li class="list-group-item" routerLink="/admin/manage" routerLinkActive="active">hero 관리</li>
+    </ul>
+  </div>
+
+  <div class="col-sm-9">
+    <router-outlet></router-outlet>
+  </div>
+</div>
