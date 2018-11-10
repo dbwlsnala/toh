@@ -18,7 +18,7 @@ export class HeroesComponent implements OnInit {
   };*/
 
   hero: Hero;
-  //heroes = HEROES;
+  heroes = HEROES;
   isSpecial = true;
   selectedHero: Hero;
 
