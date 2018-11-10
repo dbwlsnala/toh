@@ -12,6 +12,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { JqueryComponent } from './jquery/jquery.component';
 import { MydatePipe } from './mydate.pipe';
 import { HighligntDirective } from './highlignt.directive';
+import {ToasterModule} from 'angular2-toaster';
 
 const routes: Routes =
   [
@@ -39,7 +40,8 @@ const routes: Routes =
     AppRoutingModule,
     FormsModule, // ngModel 디렉티브를 갖고 있다.
     RouterModule.forRoot(routes),
-    HttpClientModule
+    HttpClientModule,
+    ToasterModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
