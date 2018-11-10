@@ -12,13 +12,27 @@ export class RegisterHeroComponent implements OnInit {
     this.form = this.fb.group({
       name: [null, Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(20)])],
       email: [null, Validators.compose([Validators.required, Validators.email])],
-      sex: null,
-      country: null,
+      sex: [null, Validators.required],
+      country: [null, Validators.required],
       address: null
     });
   }
 
   ngOnInit() {
+  }
+
+  register() {
+    // 폼이 유효하지 않으면 리턴
+    if (!this.form.valid) {
+      // 인풋박스를 강제로 한번씩 클릭
+      // to validate all form fields
+      Object.keys(this.form.controls).forEach(key => {
+        const control = this.form.controls[key];
+        control.markAsTouched({onlySelf: true});
+      });
+      return;
+    }
+    console.log('register');
   }
 
 }
